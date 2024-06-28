@@ -19,7 +19,7 @@ public class clsConecion {
     try{
         Class.forName("com.mysql.jdbc.Driver");
          //con=DriverManager.getConnection("jdbc:mysql://172.30.106.17/mesa_de_partes","usuario1","1234");
-         con = DriverManager.getConnection("jdbc:mysql://localhost/dbagencia", "root", "");
+         con = DriverManager.getConnection("jdbc:mysql://localhost/bdparqueadero", "root", "");
     }catch(ClassNotFoundException | SQLException e){
         
     }

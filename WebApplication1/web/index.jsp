@@ -6,8 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
-<%@page import="Modelo.clsECargo"%>
-<%@page import="ModeloDAO.CargoDAO"%>
+<%@page import="Modelo.clsEEspacio"%>
+<%@page import="ModeloDAO.EspacioDAO"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -92,29 +92,28 @@
     </head>
     <body>
         <header>
-            <h1>Listado de Cargos</h1>
+            <h1>Espacios Disponibles</h1>
         </header>
         <div class="container">
             <table>
                 <thead>
                     <tr>
-                        <th>ID Cargo</th>
-                        <th>Descripción</th>
-                        <th>Acciones</th>
+                        <th>Espacio</th>
+                        <th>Estado</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% 
-                    CargoDAO dao = new CargoDAO();
-                    List<clsECargo> list = dao.listar();
-                    for (clsECargo cargo : list) {
+                    EspacioDAO dao = new EspacioDAO();
+                    List<clsEEspacio> list = dao.listar();
+                    for (clsEEspacio cargo : list) {
                     %>
                     <tr>
-                        <td><%=cargo.getId_cargo()%></td>
-                        <td><%=cargo.getDescripcion()%></td>
+                        <td><%=cargo.getPosicion()%></td>
+                        <td><%=cargo.getEstado()%></td>
                         <td>
-                            <!--<a href="ControladorCargo?accion=edit&id_cargo=<%= cargo.getId_cargo()%>">Editar</a>-->
-                            <!--<a href="ControladorCargo?accion=eliminar&id_cargo=<%= cargo.getId_cargo()%>">Eliminar</a>-->
+                            <!--<a href="ControladorCargo?accion=edit&id_cargo=<!%= cargo.getId_cargo()%>">Editar</a>-->
+                            <!--<a href="ControladorCargo?accion=eliminar&id_cargo=<!%= cargo.getId_cargo()%>">Eliminar</a>-->
                         </td>
                     </tr>
                     <% } %>
